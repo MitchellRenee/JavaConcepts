@@ -28,10 +28,7 @@ public class ApplicationControllerPat {
     
     public void mapCommand(String Command, Handler CommandHandler){
         handlerMap.putIfAbsent(Command, CommandHandler);
-    }
-
-
-    
+    }    
     /*Declare a HashMap*/
     HashMap<Integer,String> hmap = new HashMap<>();{
     

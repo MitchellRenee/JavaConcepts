@@ -9,42 +9,27 @@ package studentroster;
  *
  * @author Renee
  */
-
-//Step 1: Define the POJO studentroster class
+//Step 1: Define the object in the studentroster class
 public class StudentRoster {
-    
-//Define the attributes of a studentroster
 
+    public static void main(String args[]) {
+        //Define the attributes of a studentroster
+    }
     private int studentId;
     private String firstName;
     private String lastName;
     private int busNumber;
+    private int seatNumber;
+    private int seat_number;
 
 //Constructor of a new studentroster; setting the attributes)
-    public StudentRoster(String firstName, String lastName, int studentId, int busNumber) {
+    public StudentRoster(String firstName, String lastName, int studentId, int busNumber, int seatNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentId = studentId;
         this.busNumber = busNumber;
+        this.seatNumber = seatNumber;
     }
-
-//Declare the setters to change the attributes of the studentroster 
-    public void setFirstName(String first_name) {
-        this.firstName = first_name;
-    }
-
-    public void setLastName(String last_name) {
-        this.lastName = last_name;
-    }
-
-    public void setStudentId(int student_id) {
-        this.studentId = student_id;
-    }
-
-    public void setBusNumber(int bus_number) {
-        this.busNumber = bus_number;
-    }
-
 //Declare the getter for the attributes
     public String getFirstName() {
         return firstName;
@@ -61,18 +46,41 @@ public class StudentRoster {
     public int getBusNumber() {
         return busNumber;
     }
+
+    public int getSeatNumber() {
+        return seatNumber;
+    }
+//Declare the setters to change the attributes of the studentroster. 
+    public void setFirstName(String first_name) {
+        this.firstName = first_name;
+    }
+
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
+    }
+
+    public void setStudentId(int student_id) {
+        this.studentId = student_id;
+    }
+
+    public void setBusNumber(int bus_number) {
+        this.busNumber = bus_number;
+    }
+
+    public void setseatNumber(int seat_number) {
 }
 
-//Step: 2 Create the database StudentRoster table.
-    create table StudentRoster (
-        id INT NOT NULL auto_increment,
+//Step: 2 Create the StudentInfo table for the database.
+
+create table StudentRoster ( 
         first_name VARCHAR(20) default NULL,
-        last_name  VARCHAR(20) default NULL,
+        last_name  VARCHAR(20) default NULL
+        student_id INT NOT NULL auto_increment,
         bus_number INT  default NULL,
-        student_id INT default NULL,
+        seat_number INT default NULL,
         PRIMARY KEY (id)
-    );   
-    
+);  
+
 
 //Step 3: Map the class to the database tables.
  <?xml version = "1.0" encoding = "utf-8"?>
@@ -81,21 +89,30 @@ public class StudentRoster {
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-    <class name = "StudentRoster" table "STUDENTROSTER">
+    <class name 
+
+= "StudentRoster" table "STUDENTROSTER">
 
         <meta attribute = "class-description">
-           This class contains the student detail. 
+           This class contains 
+
+the student detail. 
         </meta>
       
         <id name = "id" type = "int" column = "id">
-         <generator class="native"/>
+         <generator class
+
+="native"/>
         </id>
       
-      <property name = "firstName" column = "first_name" type = "string"/>
+           <property name = "studentId" column = "student_id" type = "int"/> 
+        <property name = "firstName" column = "first_name" type = "string"/>
       <property name = "lastName" column = "last_name" type = "string"/>
-      <property name = "studentId" column = "student_id" type = "int"/>
+
       <property name = "busNumber" column = "bus_number" type = "int"/>
-   </class>
+      <property name = "seatNumber" column = "seat_number" type = "int"/>
+   </class
+>
 
 </hibernate-mapping>
 }
@@ -122,7 +139,7 @@ public class StudentRoster {
 
     private static SessionFactory factory;
 
-    public static void main(String[] args) {
+    public static void StudentRoster(String[] args) {
 
         try {
             factory = new Configuration().configure().buildSessionFactory();
@@ -203,7 +220,15 @@ public class StudentRoster {
     }
 
     /* Method to UPDATE salary for an employee */
-    public void updateStudent(Integer StudentID, int salary) {
+
+    /**
+     *
+     * @param StudentID
+     * @param busNumber
+     * @param seatNumber
+     */
+
+    public void updateStudent(Integer StudentID, String "firtstName", String "lastName", int busNumber, int seatNumber) {
         Session session = factory.openSession();
         Transaction tx = null;
 

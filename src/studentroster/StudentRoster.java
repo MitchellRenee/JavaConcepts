@@ -69,9 +69,10 @@ public class StudentRoster {
 
     public void setseatNumber(int seat_number) {
 }
+}
 
 //Step: 2 Create the StudentInfo table for the database.
-
+/*
 create table StudentRoster ( 
         first_name VARCHAR(20) default NULL,
         last_name  VARCHAR(20) default NULL
@@ -135,6 +136,7 @@ import org.hibernate.cfg.Configuration;
  *
  * @author Renee
  */
+    /*
 public class StudentRoster {
 
     private static SessionFactory factory;
@@ -150,7 +152,7 @@ public class StudentRoster {
 
         ManageStudentRoster ME = new ManageStudentRoster();
 
-        /* Add new student records in database */
+        /* Add new student records in database 
         Integer studID1 = ME.addStudent("Brown", "Kirk", 1245);
         Integer studID2 = ME.addStudent("Wilson", "Edward", 1264);
         Integer studID3 = ME.addStudent("Darr", "Paul", 1280);
@@ -158,20 +160,20 @@ public class StudentRoster {
         Integer studID5 = ME.addStudent("Darr", "Paul", 1231);
         Integer studID6 = ME.addStudent("Green", "DeShawn", 1280);
        
-        /* List down all the employees */
+         List down all the employees 
         ME.listStudents();
 
-        /* Update student's records */
+        Update student's records 
         ME.updateStudent(empID1, 7500);
 
-        /* Delete an student from the database */
+         Delete an student from the database 
         ME.deleteStudent(empID6);
 
-        /* List down new list of the students */
+        List down new list of the students 
         ME.listStudents();
     }
 
-    /* Method to CREATE a Student in the database */
+     Method to CREATE a Student in the database 
     public Integer addStudent(String firstname, String lastname, int studentid, int busnumber) {
         //Session session = factory.openSession();
         Transaction tx = null;
@@ -193,7 +195,7 @@ public class StudentRoster {
         return studentID;
     }
 
-    /* Method to  READ all the students */
+     Method to  READ all the students 
     public void listStudent() {
         //Session session = factory.openSession();
         Transaction tx = null;
@@ -217,9 +219,9 @@ public class StudentRoster {
         } finally {
             session.close();
         }
-    }
-
-    /* Method to UPDATE salary for an employee */
+    }*/
+/*
+     Method to UPDATE salary for an employee */
 
     /**
      *
@@ -228,7 +230,7 @@ public class StudentRoster {
      * @param seatNumber
      */
 
-    public void updateStudent(Integer StudentID, String "firtstName", String "lastName", int busNumber, int seatNumber) {
+    /*public void updateStudent(Integer StudentID, String "firtstName", String "lastName", int busNumber, int seatNumber) {
         Session session = factory.openSession();
         Transaction tx = null;
 
@@ -246,9 +248,9 @@ public class StudentRoster {
         } finally {
             session.close();
         }
-    }
+    }*/
 
-    /* Method to DELETE an studnet from the records */
+    /* Method to DELETE an studnet from the records 
     public void deleteStudent(Integer StudentID) {
         Session session = factory.openSession();
         Transaction tx = null;
@@ -268,3 +270,4 @@ public class StudentRoster {
         }
     }
 }
+*/
